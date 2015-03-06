@@ -167,7 +167,7 @@ class MY_Model extends CI_Model
      */
     public function save($id = null) {
         if (isset($id)) {
-            $this->update_obj();
+            $this->update_obj($id);
         }
         else {
             $this->insert_obj();
@@ -188,7 +188,7 @@ class MY_Model extends CI_Model
      * Update record.
      */
     private function update_obj($primary_value) {
-        $this->db->update($this->_table, $this, $primary_value);
+        $this->db->update($this->_table, $this, array('id'=>$primary_value));
     }
     
     
