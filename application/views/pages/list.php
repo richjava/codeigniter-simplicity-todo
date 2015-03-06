@@ -5,4 +5,5 @@
 </h1>
 <?php
 $this->table->set_heading('Title', 'Description', 'Status','Action');
+$this->table->set_template($tbl_tmpl);
 echo $this->table->generate($todos);
