@@ -13,9 +13,8 @@
 	<link type="text/css" href="<?php echo base_url(); ?>assets/themes/default/css/redmond/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
 	<link href="<?php echo base_url(); ?>assets/themes/default/css/style.css" rel="stylesheet" />
 	<link href="<?php echo base_url(); ?>assets/themes/default/css/layout.css" rel="stylesheet" />
-	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
 	<link href="<?php echo base_url(); ?>assets/themes/default/css/bootstrap.css" rel="stylesheet">
-	<!--<link href="<?php echo base_url(); ?>assets/themes/default/css/bootstrap-responsive.css" rel="stylesheet">-->
+
 
     </head>
     <body id="page">
