@@ -8,11 +8,10 @@ body {
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 100%;
     line-height: 1em;
-    color: #414141;
 }
 
-h1 {
-    margin-bottom: 30px;
+.indent h1 {
+    margin-bottom: 20px;
 }
 h2 {
     margin-bottom: 20px;
