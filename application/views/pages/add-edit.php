@@ -10,7 +10,7 @@
     <fieldset>
         <div class="field">
             <?php echo form_label('Title', 'title'); ?>
-            <?php echo form_input('title',  ); ?>
+          <?php echo form_input('title', $todo->title); ?>
             
         </div>
         <div class="field">
