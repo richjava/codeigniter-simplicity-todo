@@ -3,16 +3,23 @@
     <?php echo ucfirst($status); ?> todos
 </h1>
 <?php
-//flashes
-if ($this->session->flashdata('mod_success')):
+//success message
+if ($this->session->flashdata('success')):
     ?>
-    <div class="alert alert-success" role="alert"><?php echo $this->session->flashdata('mod_success'); ?></div>
+    <div class="alert alert-success" role="alert"><?php echo $this->session->flashdata('success'); ?></div>
 <?php endif; ?>
+<?php
+//error message
+if ($this->session->flashdata('error')):
+    ?>
+    <div class="alert alert-danger" role="alert"><?php echo $this->session->flashdata('error'); ?></div>
+<?php endif; ?>    
+    
 <?php
 //for bootstrap of table
 $tbl_tmpl = array(
     'table_open' => '<table class="table">',
-    'heading_cell_start' => '<th>',
+//    'heading_cell_start' => '<th>',
 );
 $tbl_heading = array(
     '0' => array('data' => 'Title', 'class' => 'col-sm-4'),
