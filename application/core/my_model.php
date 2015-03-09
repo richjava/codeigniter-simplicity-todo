@@ -311,6 +311,9 @@ class MY_Model extends CI_Model
      */
     public function delete($id)
     {
+	if(!is_numeric ($id)){
+	    return false;
+	}
         $this->trigger('before_delete', $id);
         $this->_database->where($this->primary_key, $id);
         if ($this->soft_delete)
