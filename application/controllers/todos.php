@@ -1,6 +1,4 @@
-<?php
-
-if (!defined('BASEPATH'))
+<?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Todos extends CI_Controller {
@@ -41,7 +39,7 @@ class Todos extends CI_Controller {
      * List todos based on their status.
      * @param string $status
      */
-    public function status($status = null) {
+    public function status($status) {
 	$this->load->helper('url');
 	$this->load->library('table');
 	$todos = array();
@@ -52,7 +50,7 @@ class Todos extends CI_Controller {
 		$row->title,
 		$row->description,
 		$row->status,
-		anchor('todos/add_edit/'.$row->id,'Edit').' | '.anchor('todos/add_edit/'.$row->id,'Delete'),
+		anchor('todos/add_edit/'.$row->id,'Edit').' | '.anchor('todos/delete/'.$status.'/'.$row->id,'Delete'),
 	    );
 	}
 	
@@ -94,8 +92,20 @@ class Todos extends CI_Controller {
 	}
     }
 
-    public function delete() {
-	
+    /**
+     * Delete Todo based on id. Status is passed in for redirection to list.
+     * @param string $status
+     * @param int $id
+     */
+    public function delete($status,$id) {
+	$this->load->model('Todo');
+    if($this->Todo->delete($id)){
+	$this->session->set_flashdata('success', 'TODO successfully deleted.');
+    }else{
+	$this->session->set_flashdata('error', 'There was a problem deleting the TODO. Please try again.');	
+    }
+    //take back to list
+    redirect('/todos/status/'.$status, 'refresh');
     }
 
     /**
@@ -150,7 +160,7 @@ class Todos extends CI_Controller {
 	    } else {
 		$action = "updated";
 	    }
-	    $this->session->set_flashdata('mod_success', 'TODO successfully ' . $action);
+	    $this->session->set_flashdata('success', 'TODO successfully ' . $action);
 	    redirect('/todos/status/' . strtolower($todo->status), 'refresh');
 	}
     }
