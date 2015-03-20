@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/ci-simplicity-todo/';
+$config['base_url']	= 'http://localhost/codeigniter-simplicity-todo/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'asfwqef123qsd23e';
 
 /*
 |--------------------------------------------------------------------------
