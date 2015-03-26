@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/codeigniter-simplicity-todo/';
+$config['base_url']	= 'http://localhost/ci-simplicity-todo/';
 
 /*
 |--------------------------------------------------------------------------
