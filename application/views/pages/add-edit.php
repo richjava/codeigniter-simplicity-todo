@@ -10,12 +10,12 @@
     <fieldset>
         <div class="field">
             <?php echo form_label('Title', 'title'); ?>
-          <?php echo form_input('title', $todo->title); ?>
+          <?php echo form_input('title', set_value('title', $todo->title)); ?>
             
         </div>
         <div class="field">
             <?php echo form_label('Description', 'description'); ?>
-            <?php echo form_textarea('description', $todo->description); ?>
+            <?php echo form_textarea('description', set_value('title', $todo->description)); ?>
         </div>
         <div class="wrapper">
             <?php echo form_submit(array('name' => 'cancel','class' => 'submit', 'value' => 'Cancel')); ?>
@@ -23,3 +23,4 @@
         </div>
     </fieldset>
 </form><?php echo form_close(); ?>
+ 
