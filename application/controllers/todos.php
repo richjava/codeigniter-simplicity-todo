@@ -74,7 +74,7 @@ class Todos extends CI_Controller {
 	if (!$this->input->post()) {
 	    //if is add
 	    if ($id) {
-		//get Todo from db by id
+		//get Todo from db by id 
 		$this->load->model('Todo');
 		$todo = $this->Todo->get($id);
 	    }
