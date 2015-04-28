@@ -73,12 +73,7 @@ class Todos extends CI_Controller {
 	//is add/edit
 	if (!$this->input->post()) {
 	    //if is add
-	    if ($id == null) {
-		//populate with defaults
-		$todo->title = '';
-		$todo->description = '';
-		$todo->status = '';
-	    } else {//if is edit
+	    if ($id) {
 		//get Todo from db by id
 		$this->load->model('Todo');
 		$todo = $this->Todo->get($id);
